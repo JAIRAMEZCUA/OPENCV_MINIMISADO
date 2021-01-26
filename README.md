@@ -6,7 +6,7 @@ MANUAL PARA EL MINIFICADO DE OPENCV.
 
         •	Os: Windows 10
         •	Java: JDK 8
-        •	Android Studio 3.1.4 for Windows 64-bit: https://developer.android.com/studio/
+        •	Android Studio para Windows 64-bit: https://developer.android.com/studio/
         •	Android NDK r16b or greater: https://developer.android.com/ndk/dow...
         •	OpenCV SDK for Android: https://sourceforge.net/projects/open...
         •	Cmake: https://cmake.org/download/
@@ -29,27 +29,8 @@ MANUAL PARA EL MINIFICADO DE OPENCV.
 4.	Estas son las configuraciones a realizar en el CMD:
 
 
-cmake -G “Unix Makefiles”
--DCMAKE_TOOLCHAIN_FILE=..\platforms\android/android.toolchain.cmake  ..\..
--DANDROID_NDK=C:\Users\jamezcua\android-ndk-r22
--DANT_EXECUTABLE=C:\Users\jamezcua\apache-ant-1.10.9\apache-ant-1.10.9\bin\ant.bat
--DANDROID_NATIVE_API_LEVEL=27
--DANDROID_ABI=armeabi-v7a
--DBUILD_DOCS=OFF
--DBUILD_PERF_TEST=OFF
--DBUILD_TESTS=OFF
--DBUILD_ANDROID_PROJECTS=OFF
--DCMAKE_BUILD_TYPE=Release
--DBUILD_ANDROID_EXAMPLES=OFF
--DWITH_CUDA=OFF
--DBUILD_opencv_java=ON
--DBUILD_ANDROID_PROJECTS=ON
--DANDROID_STL=c++_shared
--DWITH_OPENXR=OFF
--DBUILD_PROTOBUF=OFF
--DWITH_CAROTENE=NO
--DBUILD_opencv_calib3d=OFF
--DBUILD_opencv_video=OFF **
+cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=..\android\android.toolchain.cmake ..\.. C:\Users\jamezcua\AppData\Local\Android\Sdk\ndk\21.3.6528147 -DANT_EXECUTABLE=C:\Users\jamezcua\apache-ant-1.10.9\apache-ant-1.10.9\bin\ant.bat -DANDROID_NATIVE_API_LEVEL=27 -DANDROID_ABI=armeabi-v7a -DBUILD_DOCS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DBUILD_ANDROID_PROJECTS=OFF -DCMAKE_BUILD_TYPE=Release -DBUILD_ANDROID_EXAMPLES=OFF -DWITH_CUDA=OFF -DBUILD_opencv_java=ON -DBUILD_ANDROID_PROJECTS=ON -DANDROID_STL=c++_shared -DWITH_OPENXR=OFF -DBUILD_PROTOBUF=OFF -DWITH_CAROTENE=NO -DBUILD_opencv_calib3d=OFF -DBUILD_opencv_video=OFF
+
 
 5.	Empezamos a construir con: **mingw32-make**
 
